@@ -47,6 +47,12 @@ RSpec.describe "::Api::V1::ProductsControllers", type: :request do
       expect(status).to eq(200)
       expect(Product.all.size).to eq(4)
     end
+
+    # it 'calls ProductActiveJob' do
+    #   let(:product) { Product.create() }
+
+    #   expect(ProductActiveJob).to receive(:perform_later).with(product)
+    # end
   end
 
   context 'POST /create' do
