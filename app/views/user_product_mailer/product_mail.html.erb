@@ -1,0 +1,19 @@
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <p>Berikut ini adalah produk yang baru saja Anda tambahkan :  </p>
+    <ol style="list-style-type:lower-latin">
+      <li>Nama Produk : <%= @product.name %> </li>
+      <li>Harga : <%= @product.price %> </li>
+      <li>Kategori : <%= @product.category %> </li>
+      <li>Gambar Produk :
+        <% if @product.image %>
+            <%= image_tag @product.image.url %>
+        <% end %>
+      </li>
+      <li>Status Aktif : <%= @product.is_active %> </li>
+    </ol>
+  </body>
+</html>

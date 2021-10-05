@@ -29,7 +29,7 @@ class Api::V1::ProductsController < ApplicationController
   end
 
   def destroy
-    if @user.destroy
+    if @product.destroy
       render json: { message: 'Product successfully deleted.' }, status: 200
     else
       render error: { error: 'Unable to delete Product' }, status: 400
@@ -42,6 +42,6 @@ class Api::V1::ProductsController < ApplicationController
   end
 
   def product_params
-    params.require(:product).permit(:name, :user_id, :price, :category, :image, :is_active)
+    params.permit(:name, :user_id, :price, :category, :image)
   end
 end
